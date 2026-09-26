@@ -2,44 +2,91 @@
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-int [] arr={3,4,5,6,7,8};
- int ans=binarySearch(arr,0,arr.length-1,7);
- System.out.println(ans);
-    }
+/*
+        1. Array Definition :
+        A array is a data structure that store multiple values of the same data type
+        in fixed-size collection.
+        each element is access using an index .
+        Array indexing starts from 0 in java.
 
-    /*
-     * Binary Search Algorithm
-     *
-     * Binary Search is used to find an element in a sorted array.
-     * It repeatedly divides the search range into two halves.
-     *
-     * Steps:
-     * 1. Find the middle element.
-     * 2. If it matches the target, return its index.
-     * 3. If the target is smaller, search the left half.
-     * 4. If the target is larger, search the right half.
-     *
-     * Time Complexity: O(log n)
-     * Space Complexity: O(1)
-     *
-     * Note: The array must be sorted.
-     */
-    static int binarySearch(int [] arr,int start,int end ,int target){
+      2. Arrays type:
+       there are two types of array
+       1.One-Dimensional Array
+       2. Multi- Dimensional Array
+         .
+ */
 
 
-    while (start<=end){
-        int med=start+(end-start)/2;
-        if(arr[med]==target){
-            return med;
-        }else  if(arr[med]>target){
-        start=0;
-        end=med-1;
-        }else {
-            start=med+1;
-            end=arr.length-1;
+                // 3. Declare and initialize an array of One-Dimensional Array
+
+                int[] numbers = {10, 20, 30, 40, 50};
+
+        // 4. Declare and initialize an array of One-Dimensional Array
+        int[] []numbers2 = {{1,3},{4,5},{6,7}};
+
+                // 5. Access an element using its index -One-Dimensional Array.
+                System.out.println("First element: " + numbers[0]);
+                System.out.println("Third element: " + numbers[2]);
+
+        // 6. Access an element using its index -One-Dimensional Array.
+        System.out.println(numbers2[0][0]);
+        System.out.println(numbers2[1][1]);
+
+                // 7. Update an element at  one Dimensional array
+                numbers[2] = 35;
+
+                System.out.println("Updated third element: " + numbers[2]);
+                //8. Update an  element of Multi-dimensional array
+        numbers2[1][1]=30;
+        System.out.println("Update of an element at multi-dimensional arrays : "+ numbers2[1][1]);
+                // 9. Traverse the One-Dimensional array using a for loop
+                System.out.println("One-Dimensional Array elements:");
+
+                for (int i = 0; i <numbers.length; i++) {
+                    System.out.println(numbers[i]);
+                }
+
+        // 10. Traverse the Multi-Dimensional array using a for loop using nested for loop
+        System.out.println("Multi-Dimensional  Array elements:");
+
+        for (int i = 0; i < 2; i++) {
+
+            for(int j=0;j<2;j++){
+                System.out.println(numbers2[j][i]);
+            }
         }
-    }
-    return -1;
 
-    }
-}
+                // 11. Find the sum of all elements
+                int sum = 0;
+
+                for (int i = 0; i < numbers.length; i++) {
+                    sum += numbers[i];
+                }
+
+                System.out.println("\nSum: " + sum);
+
+                // 12. Find the largest element
+                int largest = numbers[0];
+
+                for (int i = 1; i < numbers.length; i++) {
+
+                    if (numbers[i] > largest) {
+                        largest = numbers[i];
+                    }
+                }
+
+                System.out.println("Largest element: " + largest);
+
+                // 13. Find the smallest element
+                int smallest = numbers[0];
+
+                for (int i = 1; i < numbers.length; i++) {
+
+                    if (numbers[i] < smallest) {
+                        smallest = numbers[i];
+                    }
+                }
+
+                System.out.println("Smallest element: " + smallest);
+            }
+        }
